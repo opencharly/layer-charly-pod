@@ -1,5 +1,7 @@
+version: 2026.232.0520
 charly-pod:
     candy:
+        version: 2026.218.1200
         description: |-
             Concept candy owning the charly-pod kind-authoring skills (pod/deploy schema). Owns its family's `skill:` kind entities (sibling nodes in this file) — the
             the plugins→candies migration; candy/plugin-marketplace regenerates the marketplace
@@ -21,6 +23,7 @@ pod-skill:
         owner: charly-pod
         description: |-
             Schema reference for `kind: pod` and deploy entities: charly.yml entry shape, tree-position nesting, sidecars, and pod networking. Use the deploy skill for verb-level operations.
+
         content: |
             # `kind: pod` and deploy entities — Schema Reference
 
