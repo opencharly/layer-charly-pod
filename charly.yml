@@ -35,7 +35,7 @@ pod-skill:
 
             Schema sources (read these for the canonical truth):
 
-            - `spec/spec/cue_types_gen.go` (generated) — `Deploy` (the deploy node — the former `charly/deploy.go`'s `FleetNode` is DELETED, K-wave 2) + `FleetConfig`, the deploy entry shape, target discriminator.
+            - `spec/spec/cue_types_gen.go` (generated) — `Deploy` (the deploy node — the former `charly/deploy.go`'s `FleetNode` is DELETED, K-wave 2) + `DeployConfig`, the deploy entry shape, target discriminator.
             - `spec/spec/cue_types_gen.go` (generated) — the `PodSpec` Go type / `kind: pod` shape.
             - `/charly-core:deploy` — the verb-level skill covering `charly deploy add` / `charly deploy del` / `charly update`.
 
