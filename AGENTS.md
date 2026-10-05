@@ -18,8 +18,8 @@ Canonical files:
 - `/charly-pod:pod` — the owning skill for the `kind: pod` / deploy schema (entry
   shape, tree-position nesting, the substrate kinds, sidecars). Load before
   editing the `pod-skill:` entity.
-- `/charly-core:deploy` — the verb-level deploy surface (`charly fleet add`,
-  `charly fleet del`, `charly update`). Load when a change touches deploy verbs
+- `/charly-core:deploy` — the verb-level deploy surface (`charly deploy add`,
+  `charly deploy del`, `charly update`). Load when a change touches deploy verbs
   rather than the schema.
 - `/charly-image:layer` — the candy authoring reference (`charly.yml` schema,
   `plan:` step verbs incl. `check:`, package sections, service declarations).

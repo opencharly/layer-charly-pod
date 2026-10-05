@@ -10,7 +10,7 @@ entity shapes: the `charly.yml` entry, tree-position nesting (no authored
 kind at the deploy edge (`pod:` / `vm:` / `kubernetes:` / `local:` / `android:`
 / `group:`), and sidecars.
 
-The verb-level operations (`charly fleet add`, `charly fleet del`,
+The verb-level operations (`charly deploy add`, `charly deploy del`,
 `charly update`) are owned by `/charly-core:deploy`.
 `candy/plugin-marketplace` regenerates the standalone
 [opencharly/marketplace](https://github.com/opencharly/marketplace) corpus from
