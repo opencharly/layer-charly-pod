@@ -1,24 +1,19 @@
 charly-pod:
     candy:
         description: |-
-            Concept candy owning the charly-pod kind-authoring skills (pod/deploy schema). Owns its family's `skill:` kind entities (sibling nodes in this file) — the
-            the plugins→candies migration; candy/plugin-marketplace regenerates the marketplace
-            corpus (the standalone opencharly/marketplace repo) from them.
+            Drained concept candy — kept only so this repo still validates as a project while
+            it awaits retirement (opencharly/opencharly#600). It owns NO `skill:` entity any
+            more: under AGENTS.md Part II #5 the 1 `pod` family skills moved,
+            byte-identically, to the repositories that hold the code, plugin or config each one
+            documents — `spec`.
+            Nothing is authored here now.
         plan:
-            - run: this documentation-only candy ships no install content (it carries the family's skill/hook/marketplace entities); validate-satisfying no-op
+            - run: this documentation-only candy ships no install content (it carried the family's skill entities); validate-satisfying no-op
               command: "true"
               context:
                 - build
-            - check: the pod concept candy's skill entities are present and generated into the marketplace's pod/skills
-              id: charly-pod-present
+            - check: no-op — this drained candy declares no skill node; every pod-family skill lives in the repo that holds the entity it documents
+              id: charly-pod-drained
               context:
                 - build
               command: "true"
-pod-skill:
-    skill:
-        name: pod
-        family: pod
-        owner: charly-pod
-        description: |-
-            Schema reference for `kind: pod` and deploy entities: charly.yml entry shape, tree-position nesting, sidecars, and pod networking. Use the deploy skill for verb-level operations.
-
