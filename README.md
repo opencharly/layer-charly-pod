@@ -1,65 +1,34 @@
-# charly-pod
+# charly-pod — retired
 
-The `charly-pod` family — the owning skill for the `kind: pod` / deploy schema.
+> **RETIRED — this repo publishes nothing.** Its one `pod`-family skill lives in the
+> repo that holds the code, plugin or config it documents (the table below). Nothing is
+> authored, built, deployed or consumed here: a change to it is a change at its destination
+> repo, in the same pull request as the entity it documents.
 
-The `charly-pod` candy is a **concept candy**: it ships no install content and
-owns the `pod` family's `skill:` entity whose name has no namesake candy — the
-`pod` skill. It is a thin schema pointer documenting the `kind: pod` and deploy
-entity shapes: the `charly.yml` entry, tree-position nesting (no authored
-`nested:` / `peer:` fields — membership is read from the tree), the substrate
-kind at the deploy edge (`pod:` / `vm:` / `kubernetes:` / `local:` / `android:`
-/ `group:`), and sidecars.
+**This repo no longer authors a skill.** It was the `charly-pod` concept candy: a `true`-no-op `plan:` and one `skill:` entity, with the prose in `.agents/skills/`.
+Under `AGENTS.md` Part II #5 a skill lives in the repo whose code,
+plugin or config it describes — and this repo holds none of it (measured before the
+change: **0 `.go`, 0 `.cue`, no `candy/` directory**) — so it moved, byte-identically,
+to the repo that does:
 
-The verb-level operations (`charly deploy add`, `charly deploy del`,
-`charly update`) are owned by `/charly-core:deploy`.
-`candy/plugin-marketplace` regenerates the standalone
-[opencharly/marketplace](https://github.com/opencharly/marketplace) corpus from
-this entity, so the skill is authored here and projected there.
+| Skill | Now authored in | The entity that owns it |
+|---|---|---|
+| `pod` | [`opencharly/spec`](https://github.com/opencharly/spec) | the `kind: pod` CUE schema under `schema/` |
 
-## What it provides
+**The addresses did not change.** Every skill keeps its `pod` family at its
+destination node, so `/charly-pod:<skill>` still resolve — they are simply authored
+where the entity is implemented. The move is the rule `AGENTS.md` Part II #5 states, tracked
+in [opencharly/opencharly#600](https://github.com/opencharly/opencharly/issues/600).
+
+## What remains here
 
 | Property | Value |
 |---|---|
-| Layer / candy | `charly-pod` (concept candy) |
+| Layer / candy | `charly-pod` (drained concept candy) |
 | Install content | none — a `true` no-op `plan:` |
-| Owns | 1 `skill:` entity: `pod` |
-| Projected to | `marketplace/pod/skills/` |
+| Owns | nothing — 0 `skill:` entities |
 | Service / port | none |
 
-## How to use it
-
-This repo is consumed as a **skill source**, not as an image layer. Edit the
-`skill:` entity in `charly.yml`; the marketplace regeneration projects it into
-the `/charly-pod:pod` page. To reference the repo directly, compose it in a box.
-A box is a `candy:` node carrying the box's `base:` image and a nested `candy:`
-list of layer refs (the nested `candy:` is the composition list; the outer
-`candy:` is the box body):
-
-```yaml
-my-box:
-  candy:                  # the box body (an IMAGE is a `candy:` node carrying `base:`)
-    base: fedora          # the box's base image
-    candy:                # the box's composition list
-      - '@github.com/opencharly/layer-charly-pod:v2026.243.2152'
-```
-
-A `pod` entity declares the co-scheduled containers and the volumes / network /
-sidecars they share; the deploy node binds it to a substrate. The runtime verbs
-live in `/charly-core:deploy`, not in this repo.
-
-## Layout
-
-- `charly.yml` — the `charly-pod:` concept candy entity plus the `pod-skill:`
-  entity.
-- `.github/workflows/tag-on-merge.yml` — CalVer tag + `CHANGELOG/` on merge.
-- `README.md` — this user overview.
-
-## Related
-
-- Owning skill: `/charly-pod:pod`
-- Verb-level skill: `/charly-core:deploy`
-- Sibling kind skills: `/charly-image:image`, `/charly-vm:vm`, `/charly-kubernetes:kubernetes`, `/charly-local:local-spec`
-- Authoring reference: `/charly-image:layer`
-- [`opencharly/marketplace`](https://github.com/opencharly/marketplace) — the projected corpus
-- [`opencharly/charly`](https://github.com/opencharly/charly) — the charly CLI and image builder
-- [`opencharly/opencharly`](https://github.com/opencharly/opencharly) — the umbrella
+Do not compose, reference or edit this repo: the skills, their routing nodes and their
+prose all live at the destinations above, and this repo's retirement is tracked in
+[opencharly/opencharly#600](https://github.com/opencharly/opencharly/issues/600).
